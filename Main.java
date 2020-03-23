@@ -60,7 +60,7 @@ public class Main {
         System.out.println("---------------------------");
         System.out.println("Test for Exercise 13");
         Exercise13 exercise13=new Exercise13();
-        exercise13.work();*/
+        exercise13.work();
 
         System.out.println("---------------------------");
         System.out.println("Test for Exercise 14");
