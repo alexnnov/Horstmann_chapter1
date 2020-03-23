@@ -1,5 +1,4 @@
 package com.company;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class Exercise14 {
     public void work(){
@@ -8,32 +7,33 @@ public class Exercise14 {
         int numberOfElements=0,countOfStrings=0,sum=0;
         boolean isMagical=true;
 
-        String s=scanner.next();
+
+        String s=scanner.nextLine();
+        if(s.equals("")) return;
         countOfStrings++;
-        String [] line=s.split(" ");
-        for(int i=0;i<line.length;i++){
-            System.out.println(line[i]);
-        }
-        numberOfElements=s.length();
+        String[] line=s.split(" ");
+
+
+        numberOfElements=line.length;
         int ints[][]=new int[numberOfElements][numberOfElements];
         for(int i=0;i<numberOfElements;i++){
             ints[0][i]=Integer.parseInt(line[i]);
-            System.out.println(ints[0][i]);
             sum+=ints[0][i];
         }
+        
         while (true){
-            s=scanner.next();
+            s=scanner.nextLine();
             if(s.equals("")) break;
             countOfStrings++;
             line=s.split(" ");
-            int numberOfElems=s.length();
             int localSum=0;
 
-            for(int i=0;i<numberOfElems;i++){
+            for(int i=0;i<numberOfElements;i++){
                 ints[countOfStrings-1][i]=Integer.parseInt(line[i]);
                 localSum+=ints[countOfStrings-1][i];
             }
             if(sum!=localSum) isMagical=false;
+            System.out.println(isMagical);
         }
 
         int columnSum=0;
@@ -44,6 +44,8 @@ public class Exercise14 {
             }
             if(columnSum!=sum) isMagical=false;
         }
+        System.out.println("Square is magical: "+isMagical);
 
     }
 }
+
